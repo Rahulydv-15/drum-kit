@@ -10,7 +10,7 @@ var noOfButtons=document.querySelectorAll("button").length;
 for (let index = 0; index < noOfButtons; index++) {
     document.querySelectorAll(".drum")[index].addEventListener("click",function (){
         var buttonname=this.innerHTML; // getting inner html for clicked button
-        animateButton(buttonname);
+        
         switch (buttonname) {
             case "w":
                 var aud=new Audio("sounds/crash.mp3");
@@ -43,13 +43,14 @@ for (let index = 0; index < noOfButtons; index++) {
             default:
                 break;
         }
+        animateButton(buttonname);
     });
     
 }
 
 document.addEventListener("keypress",function(event){
     var buttonname=event.key;
-    animateButton(buttonname);
+    
     switch (buttonname) {
         case "w":
             var aud=new Audio("sounds/crash.mp3");
@@ -82,6 +83,7 @@ document.addEventListener("keypress",function(event){
         default:
             break;
     }
+    animateButton(buttonname);
 })
 
 //making function to show button pressed
